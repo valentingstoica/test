@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'Vali is awesome!'
-      - run: echo 'I'm telling you, Vali is awesome!'
-      - run: echo 'No, I'm really serios. Vali is awesome!'
+      - run: echo "I'm telling you, Vali is awesome!"
+      - run: echo "No, I'm really serios. Vali is awesome!"
