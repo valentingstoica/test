@@ -2,6 +2,7 @@ name: Label approved pull requests
 
 on:
   pull_request:
+  issue_comment:
 
 permissions:
   issues: write
