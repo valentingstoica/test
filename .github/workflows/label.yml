@@ -12,8 +12,18 @@ jobs:
   label-approved:
     runs-on: ubuntu-latest
     steps:
+      - name: Ensure approved label exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create approved \
+            --description "Pull request approved" \
+            --color "0E8A16" \
+            --repo "$GITHUB_REPOSITORY" || true
       - name: Add approved label
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
         run: gh pr edit "$PR_NUMBER" --add-label approved --repo "$GITHUB_REPOSITORY"
+
+        
