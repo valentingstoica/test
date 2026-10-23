@@ -15,5 +15,5 @@ jobs:
       - name: Add approved label
         env:
           GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
         run: gh pr edit "$PR_NUMBER" --add-label approved --repo "$GITHUB_REPOSITORY"
