@@ -1,17 +1,19 @@
-name: Test workflow
+name: This is the name of the workflow. Let's call it Jim.
+run-name: This is the name of the run. Let's call it Bimbo.
 
 on: workflow_dispatch
 
 jobs:
-  job1:
-    name: Job 1
+  job_id1:
+    name: This is the name of the job. Let's call it Brad.
     runs-on: ubuntu-latest
+
     steps:
       - run: echo 'Vali is awesome!'
       - run: echo "I'm telling you, Vali is awesome!"
       - run: echo "No, I'm really serios. Vali is awesome!"
-  job2:
-    name: Job 2
+  job_id2:
+    name: This is the name of the job. Let's call it Havana.
     runs-on: ubuntu-latest
     steps:
       - name: Some name
