@@ -9,5 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show github.actor
-        run: echo ${{github.actor}}
+      - name: Show github context
+        run: |
+          echo 'github.action: ${{github.action}}'
