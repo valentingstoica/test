@@ -10,3 +10,9 @@ jobs:
       - run: echo 'Vali is awesome!'
       - run: echo "I'm telling you, Vali is awesome!"
       - run: echo "No, I'm really serios. Vali is awesome!"
+  job2:
+    name: Job 2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Some name
+        run: echo "This is a new job, a better job"
