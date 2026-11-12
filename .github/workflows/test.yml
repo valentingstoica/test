@@ -9,12 +9,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo 'Vali is awesome!'
-      - run: echo "I'm telling you, Vali is awesome!"
-      - run: echo "No, I'm really serios. Vali is awesome!"
-  job_id2:
-    name: This is the name of the job. Let's call it Havana.
-    runs-on: ubuntu-latest
-    steps:
-      - name: Some name
-        run: echo "This is a new job, a better job"
+      - name: Show github.actor
+        run: echo ${{github.actor}}
