@@ -1,24 +1,16 @@
-name: This is the name of the workflow. Call it Jim.
-run-name: This is the name of the run. Call it Bimbo.
+name: Jim
+run-name: Bimbo
 
 on: workflow_dispatch
 
 env:
-  workflow_variable: Workflow variable
+  repo_variable_1: ${{vars.REPO_VARIABLE_1}}
 
 jobs:
-  job_id1:
-    name: This is the name of the job. Call it Brad.
+  job1:
     runs-on: ubuntu-latest
-
-    env:
-      job_variable: Job variable
+    name: Harry
 
     steps:
-      - name: Show github context
-        env:
-          step_variable: Step variabl
-        run: |
-          echo "workflow_variable: ${{env.workflow_variable}}"
-          echo "job_variable: ${{env.job_variable}}"
-          echo "step_variable: ${{env.step_variable}}"
+      - name: Frederick
+        run: echo ${{env.repo_variable_1}}
