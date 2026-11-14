@@ -10,7 +10,14 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     name: Harry
-
     steps:
-      - name: Frederick
-        run: echo ${{env.repo_variable_1}}
+      - name: Set variable
+        env:
+          vv: v1
+        run: |
+          echo "vv=v2" >> "$GITHUB_ENV"
+          echo "$vv"
+
+      - name: Check variable
+        run: |
+          echo "$vv"
