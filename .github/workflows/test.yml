@@ -1,21 +1,24 @@
 name: Jim
 run-name: Bimbo
 
-on: workflow_dispatch
-
-env:
-  repo_variable_1: ${{vars.REPO_VARIABLE_1}}
+on:
+  workflow_call:
+    inputs:
+      title:
+        required: true
+        description: some title boss
+        type: string
+      body:
+        required: false
+        description: some body boss
+        type: string
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
     name: Harry
+    runs-on: ubuntu-latest
     steps:
-      - name: Set variable
-        run: |
-          echo "vv=v2" >> "$GITHUB_ENV"
-          echo "$vv"
-
-      - name: Check variable
-        run: |
-          echo "$vv"
+      - name: Show title
+        run: echo ${{inputs.title}}
+      - name: Show body
+        run: echo ${{inputs.body}}
