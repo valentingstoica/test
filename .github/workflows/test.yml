@@ -2,7 +2,7 @@ name: Jim
 run-name: Bimbo
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       title:
         required: true
