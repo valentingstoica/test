@@ -12,8 +12,6 @@ jobs:
     name: Harry
     steps:
       - name: Set variable
-        env:
-          vv: v1
         run: |
           echo "vv=v2" >> "$GITHUB_ENV"
           echo "$vv"
