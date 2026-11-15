@@ -12,7 +12,7 @@ jobs:
       - name: Information about github
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: printf '%s\n' "$GITHUB_CONTEXT"'
+        run: printf '%s\n' "$GITHUB_CONTEXT"
       - name: Information about job
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
