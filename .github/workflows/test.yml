@@ -10,8 +10,14 @@ jobs:
 
     steps:
       - name: Information about github
-        run: ${{ toJSON(github)}}
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: printf '%s\n' "$GITHUB_CONTEXT" | jq 'del(.token)'
       - name: Information about job
-        run: ${{ toJson(job)}}
+        env:
+          JOB_CONTEXT: ${{ toJSON(job) }}
+        run: printf '%s\n' "$JOB_CONTEXT"
       - name: Information about steps
-        run: ${{ toJson(steps)}}
+        env:
+          STEPS_CONTEXT: ${{ toJSON(steps) }}
+        run: printf '%s\n' "$STEPS_CONTEXT"
