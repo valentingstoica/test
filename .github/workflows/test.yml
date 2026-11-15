@@ -5,5 +5,13 @@ on: workflow_dispatch
 
 jobs:
   job1:
-    name: Job 1 of Test workflow
-    uses: ./.github/workflows/v1.yml
+    name: Job 1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Information about github
+        run: ${{ toJSON(github)}}
+      - name: Information about job
+        run: ${{ toJson(job)}}
+      - name: Information about steps
+        run: ${{ toJson(steps)}}
